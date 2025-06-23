@@ -27,8 +27,8 @@ export default function AIResponse({ result, transcript, duration = 0 }: AIRespo
         audioUrl: null,
         mood: result.mood,
         moodEmoji: result.moodEmoji,
-        summary: result.summary,
-        aiResponse: result.response,
+        summary: result.summary.trim(),
+        aiResponse: result.response.trim(),
         duration,
       });
     },
