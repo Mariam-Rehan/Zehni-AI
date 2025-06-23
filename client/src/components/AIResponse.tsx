@@ -21,14 +21,17 @@ export default function AIResponse({ result, transcript, duration = 0 }: AIRespo
 
   const saveEntryMutation = useMutation({
     mutationFn: async () => {
+      const cleanedSummary = result.summary.replace(/^🧠 Summary\s*/, "").trim();
+      const cleanedResponse = result.response.replace(/^💬 Response\s*/, "").trim();
+
       return apiRequest('POST', '/api/journal-entries', {
         userId: 1, // For now, not using user authentication
         transcript,
         audioUrl: null,
         mood: result.mood,
         moodEmoji: result.moodEmoji,
-        summary: result.summary.trim(),
-        aiResponse: result.response.trim(),
+        summary: cleanedSummary,
+        aiResponse: cleanedResponse,
         duration,
       });
     },
