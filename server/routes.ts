@@ -19,6 +19,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post("/api/journal-entries", async (req, res) => {
     try {
+      console.log("🔍 Received body:", req.body); // ADD THIS
       const validatedEntry = insertJournalEntrySchema.parse(req.body);
       const entry = await storage.createJournalEntry(validatedEntry);
       res.status(201).json(entry);
