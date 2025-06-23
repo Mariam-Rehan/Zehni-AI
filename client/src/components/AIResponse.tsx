@@ -22,7 +22,7 @@ export default function AIResponse({ result, transcript, duration = 0 }: AIRespo
   const saveEntryMutation = useMutation({
     mutationFn: async () => {
       return apiRequest('POST', '/api/journal-entries', {
-        userId: null, // For now, not using user authentication
+        userId: 1, // For now, not using user authentication
         transcript,
         audioUrl: null,
         mood: result.mood,
