@@ -1,4 +1,4 @@
-# 💬 Zehni – A Voice Journal for the Soul
+# 💬 Zehni – An Urdu Voice Journal for the Soul
 
 Zehni is a voice-based journaling app made for Pakistanis to help them process their thoughts. Speak in Urdu, get a summary, a mood label, and an AI-generated message of support – all saved to a beautiful log of emotional moments.
 
@@ -59,7 +59,9 @@ All entries are anonymous (and saved under the same test user for now 👀), so 
 
 ## 📸 Screenshots
 
-_Coming soon – will add once I stop crying from happiness._
+![Home Preview](./screenshots/zehni-home.png)
+![Journal Preview](./screenshots/zehni-journal.png)
+![Mood Insights Preview](./screenshots/zehni-moodinsights.png)
 
 ---
 
@@ -72,7 +74,7 @@ And to **me**, for debugging through existential dread, database errors, and Rep
 
 ## 💖 Wanna Try It?
 
-(https://zehni-ai.onrender.com/journal)
+(https://zehni-ai.onrender.com)
 
 ---
 
