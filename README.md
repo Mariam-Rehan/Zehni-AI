@@ -74,7 +74,7 @@ And to **me**, for debugging through existential dread, database errors, and Rep
 
 ## 💖 Wanna Try It?
 
-(https://zehni-ai.onrender.com)
+https://zehni-ai.onrender.com
 
 ---
 
