@@ -19,14 +19,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post("/api/journal-entries", async (req, res) => {
     try {
-      console.log("🔍 Received body:", req.body); // ADD THIS
-      const validatedEntry = insertJournalEntrySchema.parse(req.body);
+      console.log("🔍 Received body:", req.body);
+  
+      const parsed = insertJournalEntrySchema.safeParse(req.body);
+  
+      if (!parsed.success) {
+        console.error("❌ Zod validation failed:", parsed.error.format());
+        return res.status(400).json({ 
+          message: "Invalid journal entry data", 
+          errors: parsed.error.format() 
+        });
+      }
+  
+      const validatedEntry = parsed.data;
       const entry = await storage.createJournalEntry(validatedEntry);
       res.status(201).json(entry);
+  
     } catch (error) {
       res.status(400).json({ message: "Invalid journal entry data" });
     }
   });
+
 
   app.get("/api/journal-entries/:id", async (req, res) => {
     try {
