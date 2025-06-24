@@ -1,7 +1,4 @@
 import { defineConfig } from "drizzle-kit";
-import "dotenv/config"; // ✅ Make sure dotenv loads `.env`
-import * as dotenv from "dotenv";
-dotenv.config(); // Load .env in both dev and render
 
 
 if (!process.env.DATABASE_URL) {
