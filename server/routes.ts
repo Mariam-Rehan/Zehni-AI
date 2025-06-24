@@ -33,10 +33,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   
       const validatedEntry = parsed.data;
       const entry = await storage.createJournalEntry(validatedEntry);
+      console.log("✅ Validated entry going into DB:", validatedEntry);
       res.status(201).json(entry);
   
     } catch (error) {
-      res.status(400).json({ message: "Invalid journal entry data" });
+        console.error("🔥 DB insert error:", error);
+        res.status(500).json({ message: "Server error inserting journal entry", error });
     }
   });
 
