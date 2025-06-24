@@ -12,13 +12,13 @@ export const journalEntries = pgTable("journal_entries", {
   id: serial("id").primaryKey(),
   userId: integer("user_id").references(() => users.id),
   transcript: text("transcript").notNull(),
-  audioUrl: text("audio_url").nullable(),
+  audioUrl: text("audio_url", { mode: "nullable" }),
   mood: text("mood").notNull(),
   moodEmoji: text("mood_emoji").notNull(),
   summary: text("summary").notNull(),
   aiResponse: text("ai_response").notNull(),
   createdAt: timestamp("created_at").defaultNow(),
-  duration: integer("duration").nullable(), // in seconds
+  duration: integer("duration", { mode: "nullable" }),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
