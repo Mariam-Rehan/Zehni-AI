@@ -47,3 +47,54 @@ All entries are anonymous (and saved under the same test user for now 👀), so 
 | Dev Platform      | Replit 💻                                 |
 
 ---
+
+## 🚧 Limitations / TODOs
+
+- ❌ No auth (everyone sees all entries)  
+- 💾 No individual user saving yet  
+- 🔒 Everything tied to a single hardcoded test user  
+- ✨ Planning to make it multi-user with signups soon!
+
+---
+
+## 📸 Screenshots
+
+_Coming soon – will add once I stop crying from happiness._
+
+---
+
+## 🙏 Shoutout
+
+To **ChatGPT**, for being my co-pilot.  
+And to **me**, for debugging through existential dread, database errors, and Replit chaos at 12:39am. 🥲
+
+---
+
+## 💖 Wanna Try It?
+
+(https://zehni-ai.onrender.com/journal)
+
+---
+
+## 🪄 Fun Fact
+
+I used **Replit** for the full-stack dev and honestly?  
+No regrets. No terminal? No problem. Just vibes, `console.log`s, and stubbornness.
+
+---
+
+## ⭐ GitHub Things
+
+If you liked this or think it's cute:
+
+- 🌟 Star the repo  
+- 🍴 Fork it  
+- 🐞 File issues or PRs  
+- 📣 Share with a friend!
+
+---
+
+## 🧵 Want the full dev story?
+
+Check my [LinkedIn post](#) – I talked about the process, breakdowns, breakthroughs, and why I kept going.
+
