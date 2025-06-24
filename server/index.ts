@@ -42,7 +42,7 @@ app.use((req, res, next) => {
   try {
   const existing = await storage.getUser("mariam");
   if (!existing) {
-    await storage.createUser({ id: 1, username: "mariam", password: "testpassword"});
+    await storage.createUser({username: "mariam", password: "testpassword"});
     console.log("👤 Test user with ID 1 created.");
   } else {
     console.log("👤 Test user already exists.");
