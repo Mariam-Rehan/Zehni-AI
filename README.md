@@ -41,7 +41,7 @@ All entries are anonymous (and saved under the same test user for now 👀), so 
 | Frontend          | Vite + React + Tailwind                  |
 | Voice Transcription | Web Speech API                        |
 | Backend           | Express + Node.js                        |
-| Database          | PostgreSQL (via Neon) + Drizzle ORM      |
+| Database          | PostgreSQL + Drizzle ORM                  |
 | AI Responses      | OpenRouter API                           |
 | Hosting           | Render                                   |
 | Dev Platform      | Replit 💻                                 |
