@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 (async () => {
   const server = await registerRoutes(app);
   try {
-  const existing = await storage.getUser("mariam");
+  const existing = await storage.getUserByUsername("mariam");
   if (!existing) {
     await storage.createUser({username: "mariam", password: "testpassword"});
     console.log("👤 Test user with ID 1 created.");
