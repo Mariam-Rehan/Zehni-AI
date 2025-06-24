@@ -38,7 +38,17 @@ app.use((req, res, next) => {
 
 (async () => {
   const server = await registerRoutes(app);
-
+  try {
+  const existing = await storage.getUser(1);
+  if (!existing) {
+    await storage.createUser({ id: 1, username: "mariam" });
+    console.log("👤 Test user with ID 1 created.");
+  } else {
+    console.log("👤 Test user already exists.");
+  }
+} catch (err) {
+  console.error("❌ Failed to auto-create test user:", err);
+}
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
