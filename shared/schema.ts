@@ -26,7 +26,11 @@ export const insertUserSchema = createInsertSchema(users).pick({
   password: true,
 });
 
-export const insertJournalEntrySchema = createInsertSchema(journalEntries).omit({
+export const insertJournalEntrySchema = createInsertSchema(journalEntries, {
+  userId: (schema) => schema.userId.nullable(),
+  audioUrl: (schema) => schema.audioUrl.nullable(),
+  duration: (schema) => schema.duration.nullable(),
+}).omit({
   id: true,
   createdAt: true,
 });
