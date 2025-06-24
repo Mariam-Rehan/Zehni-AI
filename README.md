@@ -1,5 +1,6 @@
+<div align="center">
 # 💬 Zehni – An Urdu Voice Journal for the Soul
-
+</div>
 <p align="center">
   <img src="screenshots/Zehni.gif" alt="Zehni Animation Banner" width="400"/>
 </p>
