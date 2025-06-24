@@ -34,12 +34,21 @@ export class DatabaseStorage implements IStorage {
   }
 
   async createJournalEntry(insertEntry: InsertJournalEntry): Promise<JournalEntry> {
+  try {
+    console.log("📥 Trying to insert entry:", insertEntry);
+
     const [entry] = await db
       .insert(journalEntries)
       .values(insertEntry)
       .returning();
+
+    console.log("✅ Entry inserted:", entry);
     return entry;
+  } catch (err) {
+    console.error("🔥 DB insert error:", err);
+    throw err; // let it bubble up to routes.ts
   }
+}
 
   async getJournalEntries(userId?: number): Promise<JournalEntry[]> {
     if (userId) {
