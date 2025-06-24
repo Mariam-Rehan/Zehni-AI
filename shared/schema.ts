@@ -26,14 +26,17 @@ export const insertUserSchema = createInsertSchema(users).pick({
   password: true,
 });
 
-export const insertJournalEntrySchema = createInsertSchema(journalEntries, {
-  userId: (schema) => schema.userId.nullable(),
-  audioUrl: (schema) => schema.audioUrl.nullable(),
-  duration: (schema) => schema.duration.nullable(),
-}).omit({
-  id: true,
-  createdAt: true,
+export const insertJournalEntrySchema = z.object({
+  userId: z.number().nullable().optional(),
+  transcript: z.string().min(1),
+  audioUrl: z.string().nullable().optional(),
+  mood: z.string().min(1),
+  moodEmoji: z.string().min(1),
+  summary: z.string().min(1),
+  aiResponse: z.string().min(1),
+  duration: z.number().nullable().optional(),
 });
+
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
